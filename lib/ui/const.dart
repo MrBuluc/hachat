@@ -12,6 +12,18 @@ LinearGradient entryButton = const LinearGradient(
     stops: [.1, .8],
     colors: [Color.fromRGBO(226, 10, 22, 1), Color.fromRGBO(40, 56, 46, 1)]);
 
+LinearGradient registerPageBg = const LinearGradient(
+    begin: Alignment.topRight,
+    end: Alignment.bottomLeft,
+    stops: [.1, .5],
+    colors: [Color.fromRGBO(209, 180, 122, 1), Color.fromRGBO(40, 56, 46, 1)]);
+
+LinearGradient registerButton = const LinearGradient(
+    begin: Alignment.topRight,
+    end: Alignment.bottomLeft,
+    stops: [.3, .9],
+    colors: [Color.fromRGBO(209, 180, 122, 1), Color.fromRGBO(40, 56, 46, 1)]);
+
 const TextStyle headerText = TextStyle(
     color: Colors.white,
     fontSize: 42,

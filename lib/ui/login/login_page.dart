@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hachat/ui/const.dart';
 
+import 'register_page.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -32,6 +34,10 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 GestureDetector(
                   child: buildNewAccount(),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const RegisterPage())),
                 )
               ],
             ),
