@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hachat/ui/const.dart';
+import 'package:hachat/ui/home_page/home_page.dart';
 
 import 'register_page.dart';
 
@@ -134,13 +135,20 @@ class _LoginPageState extends State<LoginPage> {
                               fontWeight: FontWeight.bold,
                               color: Theme.of(context).hintColor),
                         ),
-                        Container(
-                          height: size.height * .07,
-                          width: size.width * .2,
-                          decoration: BoxDecoration(
-                              gradient: entryButton,
-                              borderRadius: BorderRadius.circular(5)),
-                          child: const Icon(Icons.forward, color: Colors.white),
+                        GestureDetector(
+                          child: Container(
+                            height: size.height * .07,
+                            width: size.width * .2,
+                            decoration: BoxDecoration(
+                                gradient: entryButton,
+                                borderRadius: BorderRadius.circular(5)),
+                            child:
+                                const Icon(Icons.forward, color: Colors.white),
+                          ),
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomePage())),
                         ),
                       ])
                 ],
