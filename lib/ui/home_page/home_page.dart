@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:hachat/ui/academic_calendar_page/academic_calendar_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,36 +18,48 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           "HACHAT",
           style: TextStyle(color: Colors.white, fontSize: 22),
         ),
         centerTitle: true,
         elevation: 2,
-        actions: [
+        actions: const [
           Icon(
             Icons.account_circle,
             size: 30,
           )
         ],
       ),
-      drawer: Drawer(),
+      drawer: const Drawer(),
       body: Center(
         child: Column(
           children: [
             SizedBox(
               height: size.height * .03,
             ),
-            buildNavigators(0, [Colors.grey, Colors.grey.shade700],
-                Icons.calendar_month, "Akademik Takvim", null),
+            buildNavigators(
+                0,
+                [Colors.grey, Colors.grey.shade700],
+                Icons.calendar_month,
+                "Akademik Takvim",
+                const AcademicCalendarPage()),
             Expanded(
               flex: 1,
               child: Row(
                 children: [
-                  buildNavigators(1, [Colors.lightBlueAccent, Colors.indigo],
-                      Icons.directions_bus, "Ring", null),
-                  buildNavigators(2, [Colors.greenAccent, Colors.blue],
-                      Icons.calculate_outlined, "Gpa Hesaplayıcı", null),
+                  buildNavigators(
+                      1,
+                      [Colors.lightBlueAccent, Colors.indigo],
+                      Icons.directions_bus,
+                      "Ring",
+                      const AcademicCalendarPage()),
+                  buildNavigators(
+                      2,
+                      [Colors.greenAccent, Colors.blue],
+                      Icons.calculate_outlined,
+                      "Gpa Hesaplayıcı",
+                      const AcademicCalendarPage()),
                 ],
               ),
             ),
@@ -55,17 +67,25 @@ class _HomePageState extends State<HomePage> {
                 flex: 1,
                 child: Row(
                   children: [
-                    buildNavigators(3, [Colors.red, Colors.red.shade700],
-                        Icons.restaurant_menu, "Yemekhane", null),
-                    buildNavigators(4, [Colors.green, Colors.lightGreen],
-                        Icons.map, "Kampüs Haritası", null)
+                    buildNavigators(
+                        3,
+                        [Colors.red, Colors.red.shade700],
+                        Icons.restaurant_menu,
+                        "Yemekhane",
+                        const AcademicCalendarPage()),
+                    buildNavigators(
+                        4,
+                        [Colors.green, Colors.lightGreen],
+                        Icons.map,
+                        "Kampüs Haritası",
+                        const AcademicCalendarPage())
                   ],
                 )),
           ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Anasayfa"),
           BottomNavigationBarItem(
               icon: Icon(Icons.newspaper), label: "Duyurular"),
@@ -83,40 +103,40 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget buildNavigators(int index, List<Color> gradientColors, IconData icon,
-          String text, Widget? page) =>
+          String text, Widget page) =>
       GestureDetector(
-        child: Expanded(
-            flex: 1,
-            child: Container(
-              width: index > 0 ? size.width * .45 : null,
-              margin: const EdgeInsets.only(right: 10, left: 10, bottom: 10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  gradient: LinearGradient(
-                      begin: Alignment.centerLeft,
-                      end: Alignment.bottomRight,
-                      colors: gradientColors)),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    icon,
-                    size: size.height * .1,
-                    color: Colors.white,
-                  ),
-                  Center(
-                    child: Text(
-                      text,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 20),
-                    ),
-                  ),
-                  if (index == 0)
-                    SizedBox(
-                      height: 10,
-                    )
-                ],
+        child: Container(
+          width: index > 0 ? size.width * .45 : null,
+          margin: const EdgeInsets.only(right: 10, left: 10, bottom: 10),
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              gradient: LinearGradient(
+                  begin: Alignment.centerLeft,
+                  end: Alignment.bottomRight,
+                  colors: gradientColors)),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                icon,
+                size: size.height * .1,
+                color: Colors.white,
               ),
-            )),
+              Center(
+                child: Text(
+                  text,
+                  textAlign: TextAlign.center,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
+              if (index == 0)
+                const SizedBox(
+                  height: 10,
+                )
+            ],
+          ),
+        ),
+        onTap: () => Navigator.push(
+            context, MaterialPageRoute(builder: (context) => page)),
       );
 }
