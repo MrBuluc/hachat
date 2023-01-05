@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hachat/ui/academic_calendar_page/academic_calendar_page.dart';
+import 'package:hachat/ui/ring_page/ring_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -48,12 +49,8 @@ class _HomePageState extends State<HomePage> {
               flex: 1,
               child: Row(
                 children: [
-                  buildNavigators(
-                      1,
-                      [Colors.lightBlueAccent, Colors.indigo],
-                      Icons.directions_bus,
-                      "Ring",
-                      const AcademicCalendarPage()),
+                  buildNavigators(1, [Colors.lightBlueAccent, Colors.indigo],
+                      Icons.directions_bus, "Ring", const RingPage()),
                   buildNavigators(
                       2,
                       [Colors.greenAccent, Colors.blue],
