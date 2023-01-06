@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     buildNavigators(
                         3,
-                        [Colors.red, Colors.red.shade700],
+                        [Colors.yellow, Colors.yellow.shade900],
                         Icons.restaurant_menu,
                         "Yemekhane",
                         const AcademicCalendarPage()),
