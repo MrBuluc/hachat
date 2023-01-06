@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hachat/ui/academic_calendar_page/academic_calendar_page.dart';
+import 'package:hachat/ui/gpa_cal_page/gpa_cal_page.dart';
 import 'package:hachat/ui/ring_page/ring_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -56,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                       [Colors.greenAccent, Colors.blue],
                       Icons.calculate_outlined,
                       "Gpa Hesaplayıcı",
-                      const AcademicCalendarPage()),
+                      const GpaCalPage()),
                 ],
               ),
             ),
