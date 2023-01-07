@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hachat/ui/academic_calendar_page/academic_calendar_page.dart';
+import 'package:hachat/ui/dining_hall_page/dining_hall_page.dart';
 import 'package:hachat/ui/gpa_cal_page/gpa_cal_page.dart';
 import 'package:hachat/ui/ring_page/ring_page.dart';
 
@@ -70,7 +71,7 @@ class _HomePageState extends State<HomePage> {
                         [Colors.yellow, Colors.yellow.shade900],
                         Icons.restaurant_menu,
                         "Yemekhane",
-                        const AcademicCalendarPage()),
+                        const DiningHallPage()),
                     buildNavigators(
                         4,
                         [Colors.green, Colors.lightGreen],

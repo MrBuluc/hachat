@@ -87,3 +87,99 @@ List<List<String>> times = [
     "09:00"
   ]
 ];
+
+List<List<Map<String, dynamic>>> foods = [
+  [
+    {
+      "name": "Sıhhiye Mercimek Çorba",
+      "alerjen": ["A"]
+    },
+    {
+      "name": "Beytepe Yayla Çorba",
+      "alerjen": ["A", "C", "D"]
+    },
+    {
+      "name": "Tas Kebap",
+      "alerjen": ["A"]
+    },
+    {"name": "Sıhhiye Pirinç Pilavı", "alerjen": []},
+    {
+      "name": "Beytepe Kırmızı Lahana Havuç Salata",
+      "alerjen": ["L"]
+    },
+    {
+      "name": "Revani",
+      "alerjen": ["A", "C", "D", "K"]
+    },
+    {
+      "name": "Lokma Tatlısı",
+      "alerjen": ["A", "D", "C", "K"]
+    },
+    {
+      "name": "Etsiz Kuru Fasulye",
+      "alerjen": ["A"]
+    },
+  ],
+  [
+    {
+      "name": "Domates Çorba",
+      "alerjen": ["A", "D"]
+    },
+    {
+      "name": "Etli Yeşil Mercimek",
+      "alerjen": ["A"]
+    },
+    {
+      "name": "Bulgur Pilavı",
+      "alerjen": ["A"]
+    },
+    {
+      "name": "Hoşaf",
+      "alerjen": ["L"]
+    },
+    {
+      "name": "Etsiz Yeşil Mercimek",
+      "alerjen": ["A"]
+    }
+  ],
+  [
+    {
+      "name": "Şehriye Çorbası",
+      "alerjen": ["A"]
+    },
+    {
+      "name": "Sıhhiye Izgara Köfte(parmak patates)",
+      "alerjen": ["A"]
+    },
+    {
+      "name": "Beytepe Sebzeli Kebap",
+      "alerjen": ["A"]
+    },
+    {
+      "name": "Soslu Makarna",
+      "alerjen": ["A"]
+    },
+    {
+      "name": "Meyve veya Ayran",
+      "alerjen": ["D"]
+    },
+    {
+      "name": "Etsiz Türlü",
+      "alerjen": ["A"]
+    }
+  ],
+];
+
+List<String> calories = ["1329", "1085", "1155"];
+
+AppBar buildAppBar(String title, Color bgColor) => AppBar(
+      title: Text(title),
+      centerTitle: true,
+      actions: const [
+        Icon(
+          Icons.info_outline,
+          size: 25,
+        )
+      ],
+      backgroundColor: bgColor,
+    );

@@ -16,17 +16,7 @@ class _RingPageState extends State<RingPage> {
     return Theme(
       data: ThemeData.dark(),
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text("Ring Saatleri"),
-          centerTitle: true,
-          actions: const [
-            Icon(
-              Icons.info_outline,
-              size: 25,
-            )
-          ],
-          backgroundColor: Colors.indigo,
-        ),
+        appBar: buildAppBar("Ring Saatleri", Colors.indigo),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(top: 50.0),
