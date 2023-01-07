@@ -149,7 +149,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ],
             ),
             Image.asset(
-              "asset/fiores/fioresLogo.jpg",
+              "assets/fiores/fioresLogo.jpg",
               width: 150,
               height: 100,
             )

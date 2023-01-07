@@ -172,14 +172,19 @@ List<List<Map<String, dynamic>>> foods = [
 
 List<String> calories = ["1329", "1085", "1155"];
 
-AppBar buildAppBar(String title, Color bgColor) => AppBar(
+AppBar buildAppBar(String title, Color bgColor,
+        {bool isInfo = true, TabBar? tabBar}) =>
+    AppBar(
       title: Text(title),
       centerTitle: true,
-      actions: const [
-        Icon(
-          Icons.info_outline,
-          size: 25,
-        )
-      ],
+      actions: isInfo
+          ? const [
+              Icon(
+                Icons.info_outline,
+                size: 25,
+              )
+            ]
+          : null,
       backgroundColor: bgColor,
+      bottom: tabBar,
     );
